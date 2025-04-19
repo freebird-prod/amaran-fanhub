@@ -71,7 +71,7 @@ const CharactersSection = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {CAST.map((character, index) => (
-            <CharacterCard key={character.id} character={character} index={index} />
+            <CharacterCard key={index} character={character} index={index} />
           ))}
         </div>
         
