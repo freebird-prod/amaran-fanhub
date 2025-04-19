@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    --background: 222 47.4% 11.2%;
+    --background: 230 85% 8%;
     --foreground: 210 40% 98%;
     
-    --card: 222 47.4% 16%;
+    --card: 230 70% 13%;
     --card-foreground: 210 40% 98%;
     
-    --popover: 222 47.4% 16%;
+    --popover: 230 70% 13%;
     --popover-foreground: 210 40% 98%;
     
-    --primary: 222 47.4% 11.2%;
+    --primary: 230 85% 15%;
     --primary-foreground: 210 40% 98%;
     
-    --secondary: 15 80% 45%;
+    --secondary: 195 80% 50%;
     --secondary-foreground: 210 40% 98%;
     
-    --muted: 217 24% 22%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 232 38% 18%;
+    --muted-foreground: 215 20% 75%;
     
-    --accent: 45 95% 50%;
-    --accent-foreground: 222 47.4% 11.2%;
+    --accent: 47 100% 50%;
+    --accent-foreground: 230 60% 10%;
     
-    --destructive: 15 80% 45%;
+    --destructive: 350 90% 45%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 217 24% 26%;
-    --input: 217 24% 26%;
-    --ring: 45 95% 50%;
+    --border: 230 40% 26%;
+    --input: 230 40% 26%;
+    --ring: 195 80% 50%;
     
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
   
   * {
@@ -56,7 +56,7 @@
     backface-visibility: hidden;
   }
   
-  .perspective-[1000px] {
+  .perspective-1000 {
     perspective: 1000px;
   }
   
