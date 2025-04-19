@@ -12,72 +12,137 @@ export const MOVIE_INFO = {
 };
 
 // Character Information
-export const CHARACTERS = [
+// Add this block to client/src/lib/constants.ts
+export const CAST = [
   {
-    id: 1,
-    name: "Eira Valen",
-    role: "Interstellar Archaeologist",
-    shortDescription: "A brilliant archaeologist with a mysterious past, searching for humanity's origins.",
-    fullDescription: "After losing her family in a space station accident, Eira devoted her life to archaeology, hunting ancient technologies across the stars.",
-    strengths: "Intellect, determination, adaptability",
-    weaknesses: "Trust issues, recklessness, nightmares from her past",
-    actor: "Sophia Noor",
-    imageUrl: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    name: "Ava Johnson",
+    role: "Eira Valen",
+    imageUrl: "https://example.com/image1.jpg", // replace with actual image URL
   },
   {
-    id: 2,
-    name: "Kade Reiker",
-    role: "Ex-Military Pilot",
-    shortDescription: "A skilled pilot with a troubled past who becomes Eira's reluctant ally.",
-    fullDescription: "Formerly a decorated military pilot, Kade was dishonorably discharged and now works as a smuggler in the outer colonies.",
-    strengths: "Flying skills, tactical thinking, survival instincts",
-    weaknesses: "Alcoholism, cynicism, authority issues",
-    actor: "James Cortez",
-    imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    name: "Liam Smith",
+    role: "Supporting Character",
+    imageUrl: "https://example.com/image2.jpg", // replace with actual image URL
   },
   {
-    id: 3,
-    name: "Nova",
-    role: "Synthetic Intelligence",
-    shortDescription: "An advanced AI with mysterious origins who guides Eira on her quest.",
-    fullDescription: "A highly evolved synthetic intelligence discovered within the ancient artifact, Nova possesses knowledge about Ämaran but has fragmented memories.",
-    strengths: "Data analysis, ancient language translation, tactical projections",
-    weaknesses: "Incomplete memories, vulnerability to specific energy frequencies",
-    actor: "Elena Kim (Voice & Motion Capture)",
-    imageUrl: "https://images.unsplash.com/photo-1485206412256-701ccc5b93ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    name: "Sivakarthikeyan",
+    role: 'Major Mukund "Maddy" Varadarajan',
+    imageUrl: "https://example.com/image_sivakarthikeyan.jpg", // replace with actual image URL
   },
   {
-    id: 4,
-    name: "Dr. Rhen Takeda",
-    role: "Xenobiologist",
-    shortDescription: "A leading xenobiologist whose unconventional theories have made him an outcast in the scientific community.",
-    fullDescription: "Dr. Takeda spent decades studying extraterrestrial biology and believes Ämaran holds the key to understanding humanity's genetic lineage. Though ridiculed by peers, his expertise becomes invaluable to Eira's mission.",
-    strengths: "Scientific knowledge, unorthodox thinking, patience",
-    weaknesses: "Social awkwardness, stubbornness, health issues from extended space travel",
-    actor: "Hiroshi Watanabe",
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    name: "Sai Pallavi",
+    role: "Indhu Rebecca Varghese, Mukund's wife",
+    imageUrl: "https://example.com/image_saipallavi.jpg", // replace with actual image URL
   },
   {
-    id: 5,
-    name: "Commander Vivian Reyes",
-    role: "Galactic Coalition Officer",
-    shortDescription: "A decorated officer tasked with securing the artifact for the Coalition, but harboring her own agenda.",
-    fullDescription: "Born into a military dynasty, Commander Reyes has risen through the ranks with ruthless efficiency. She publicly seeks the artifact for the Coalition's archives, but secretly works with a shadow organization that believes Ämaran's technology could give humanity absolute power.",
-    strengths: "Combat expertise, strategic mind, unwavering resolve",
-    weaknesses: "Moral ambiguity, obsession with power, overconfidence",
-    actor: "Zoe Jordan",
-    imageUrl: "https://images.unsplash.com/photo-1654110455429-cf322b40a906?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    name: "Rahul Bose",
+    role: "Colonel Amit Singh Dabas",
+    imageUrl: "https://example.com/image_rahulbose.jpg", // replace with actual image URL
   },
   {
-    id: 6,
-    name: "Tavar",
-    role: "Ancient Guardian",
-    shortDescription: "A mysterious entity who protects the ancient knowledge and secrets of Ämaran.",
-    fullDescription: "Neither truly alive nor artificial, Tavar exists as a consciousness bound to Ämaran's protective systems. Created by the planet's original inhabitants, he tests those who seek the world's knowledge, determining if they are worthy of its secrets.",
-    strengths: "Vast knowledge, manipulation of Ämaran's defense systems, immortality",
-    weaknesses: "Bound to Ämaran, isolation-induced eccentricity, outdated understanding of humanity",
-    actor: "Idris Malcolm",
-    imageUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    name: "Bhuvan Arora",
+    role: "Sepoy Vikram Singh",
+    imageUrl: "https://example.com/image_bhuvanarora.jpg", // replace with actual image URL
+  },
+  {
+    name: "Haethakshi V.",
+    role: "Arsheya \"Arshu\"",
+    imageUrl: "https://example.com/image_haethakshi.jpg", // replace with actual image URL
+  },
+  {
+    name: "Lallu",
+    role: "Sepoy Ravi Shankar",
+    imageUrl: "https://example.com/image_lallu.jpg", // replace with actual image URL
+  },
+  {
+    name: "Shreekumar",
+    role: "Sepoy Michael",
+    imageUrl: "https://example.com/image_shreekumar.jpg", // replace with actual image URL
+  },
+  {
+    name: "Shyamaprasad",
+    role: "George Varghese",
+    imageUrl: "https://example.com/image_shyamaprasad.jpg", // replace with actual image URL
+  },
+  {
+    name: "Shyam Mohan",
+    role: "Deepu",
+    imageUrl: "https://example.com/image_shyammohan.jpg", // replace with actual image URL
+  },
+  {
+    name: "Geetha Kailasam",
+    role: "Geetha Varadarajan",
+    imageUrl: "https://example.com/image_geethakailasam.jpg", // replace with actual image URL
+  },
+  {
+    name: "Raju Rajappan",
+    role: "Varadarajan",
+    imageUrl: "https://example.com/image_rajurajappan.jpg", // replace with actual image URL
+  },
+  {
+    name: "Umair Ibn Lateef",
+    role: "Sepoy Waheed Ahamed",
+    imageUrl: "https://example.com/image_umair.jpg", // replace with actual image URL
+  },
+  {
+    name: "Mir Salman",
+    role: "Sepoy Saifudeen",
+    imageUrl: "https://example.com/image_mirsalman.jpg", // replace with actual image URL
+  },
+  {
+    name: "Ajaey Naga Raaman",
+    role: "Sepoy Rajesh Shukla",
+    imageUrl: "https://example.com/image_ajaey.jpg", // replace with actual image URL
+  },
+  {
+    name: "Gaurav Venkatesh",
+    role: "Sepoy Venkanna",
+    imageUrl: "https://example.com/image_gaurav.jpg", // replace with actual image URL
+  },
+  {
+    name: "Abhinav Raj",
+    role: "Major Srinath",
+    imageUrl: "https://example.com/image_abhinav.jpg", // replace with actual image URL
+  },
+  {
+    name: "John Kaipallil",
+    role: 'Major Mithun "MM" Mohan',
+    imageUrl: "https://example.com/image_john.jpg", // replace with actual image URL
+  },
+  {
+    name: "Paul T. Baby",
+    role: "Andrews",
+    imageUrl: "https://example.com/image_paul.jpg", // replace with actual image URL
+  },
+  {
+    name: "Sugamya Sankar",
+    role: "Nithya",
+    imageUrl: "https://example.com/image_sugamya.jpg", // replace with actual image URL
+  },
+  {
+    name: "Navya Sujji",
+    role: "Swetha",
+    imageUrl: "https://example.com/image_navya.jpg", // replace with actual image URL
+  },
+  {
+    name: "Rohan Surya Kanuma Reddy",
+    role: "Sepoy Narasimha Rao",
+    imageUrl: "https://example.com/image_rohan.jpg", // replace with actual image URL
+  },
+  {
+    name: "Shyrush Zutshi",
+    role: "Altaf Baba (Voice dubbed by Harish Uthaman)",
+    imageUrl: "https://example.com/image_shyrush.jpg", // replace with actual image URL
+  },
+  {
+    name: "Rohman Shawl",
+    role: "Asif Wani (Voice dubbed by Gautham Karthik)",
+    imageUrl: "https://example.com/image_rohman.jpg", // replace with actual image URL
+  },
+  {
+    name: "Vikas Bangar",
+    role: "Sepoy Jyoti Sharma",
+    imageUrl: "https://example.com/image_vikas.jpg", // replace with actual image URL
   }
 ];
 
