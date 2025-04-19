@@ -43,22 +43,22 @@ const Header = () => {
       className={cn(
         "fixed w-full z-50 transition-all duration-300",
         scrolled 
-          ? "bg-primary/90 backdrop-blur-sm border-b border-secondary/20" 
+          ? "bg-primary/95 backdrop-blur-md border-b border-secondary/20 shadow-lg" 
           : "bg-transparent"
       )}
     >
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="#" className="flex items-center" onClick={(e) => e.preventDefault()}>
-          <h1 className="text-2xl sm:text-3xl font-bold text-accent animate-pulse">ÄMARAN</h1>
+        <a href="#" className="flex items-center z-20" onClick={(e) => e.preventDefault()}>
+          <h1 className="text-2xl sm:text-3xl font-bold text-accent animate-pulse tracking-wider">ÄMARAN</h1>
         </a>
         
         {/* Desktop navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-1 xl:space-x-6">
           {navItems.slice(0, -1).map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-foreground hover:text-accent transition duration-200"
+              className="text-foreground hover:text-accent transition-colors duration-200 px-3 py-2 text-sm xl:text-base rounded-md hover:bg-primary/50"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection(item.href);
@@ -69,7 +69,7 @@ const Header = () => {
           ))}
           <Button 
             variant="destructive" 
-            className="bg-secondary hover:bg-secondary/80 text-foreground"
+            className="bg-secondary hover:bg-secondary/80 text-foreground ml-2"
             onClick={() => scrollToSection("#contact")}
           >
             Contact
@@ -80,7 +80,7 @@ const Header = () => {
         <Button 
           variant="ghost" 
           size="icon" 
-          className="md:hidden" 
+          className="lg:hidden z-20" 
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -91,27 +91,30 @@ const Header = () => {
       {/* Mobile navigation */}
       <div 
         className={cn(
-          "md:hidden flex-col bg-primary w-full border-t border-muted/30 absolute transition-all duration-300 ease-in-out",
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+          "lg:hidden flex flex-col bg-primary/95 backdrop-blur-md w-full fixed inset-0 pt-20 pb-6 z-10 transition-all duration-300 ease-in-out",
+          isOpen ? "translate-y-0 opacity-100" : "translate-y-[-100%] opacity-0"
         )}
       >
-        {navItems.map((item, index) => (
-          <a
-            key={item.name}
-            href={item.href}
-            className={cn(
-              "text-foreground hover:text-accent py-4 px-4 transition duration-200",
-              index !== navItems.length - 1 && "border-b border-muted/30",
-              item.name === "Contact" && "bg-secondary/60 hover:bg-secondary/80"
-            )}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection(item.href);
-            }}
-          >
-            {item.name}
-          </a>
-        ))}
+        <div className="overflow-auto flex-grow">
+          {navItems.map((item, index) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className={cn(
+                "text-foreground hover:text-accent py-4 px-6 transition duration-200 flex items-center text-lg border-l-4",
+                index !== navItems.length - 1 && "border-b border-muted/30",
+                item.name === "Contact" ? "border-l-secondary bg-secondary/10" : "border-l-transparent",
+                "hover:border-l-accent hover:bg-primary/60"
+              )}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(item.href);
+              }}
+            >
+              <span className="ml-2">{item.name}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </header>
   );

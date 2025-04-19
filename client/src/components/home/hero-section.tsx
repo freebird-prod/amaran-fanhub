@@ -53,23 +53,23 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 text-center pt-28 md:pt-0 relative z-10">
+      <div className="container mx-auto px-4 text-center pt-28 md:pt-0 relative z-10 flex flex-col justify-center min-h-[90vh]">
         <motion.div
-          className="flex items-center justify-center gap-2 mb-4"
+          className="flex items-center justify-center gap-1 sm:gap-2 mb-4 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <Star className="text-secondary w-6 h-6" fill="currentColor" />
-          <p className="uppercase tracking-widest text-sm font-light text-secondary">In Theaters December 15, 2023</p>
-          <Star className="text-secondary w-6 h-6" fill="currentColor" />
+          <Star className="text-secondary w-4 sm:w-6 h-4 sm:h-6" fill="currentColor" />
+          <p className="uppercase tracking-widest text-xs sm:text-sm font-light text-secondary">In Theaters December 15, 2023</p>
+          <Star className="text-secondary w-4 sm:w-6 h-4 sm:h-6" fill="currentColor" />
         </motion.div>
         
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-accent animate-glow tracking-wider"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-accent animate-glow tracking-wider"
         >
           {MOVIE_INFO.title}
         </motion.h1>
@@ -78,7 +78,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl max-w-3xl mx-auto mb-2 text-foreground/90 text-shadow"
+          className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-2 text-foreground/90 text-shadow"
         >
           {MOVIE_INFO.tagline}
         </motion.p>
@@ -87,7 +87,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-lg max-w-xl mx-auto mb-8 text-foreground/70"
+          className="text-base sm:text-lg max-w-xl mx-auto mb-6 sm:mb-8 text-foreground/70"
         >
           Experience the adventure that critics are calling "the cinematic event of the year."
         </motion.p>
@@ -96,27 +96,27 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-10 flex justify-center items-center gap-4"
+          className="mb-6 sm:mb-10 flex justify-center items-center gap-2 sm:gap-4"
         >
-          <div className="flex gap-2 items-center">
-            <Star className="text-accent w-5 h-5" fill="currentColor" />
-            <Star className="text-accent w-5 h-5" fill="currentColor" />
-            <Star className="text-accent w-5 h-5" fill="currentColor" />
-            <Star className="text-accent w-5 h-5" fill="currentColor" />
-            <Star className="text-accent w-5 h-5" fill="currentColor" />
+          <div className="flex gap-1 sm:gap-2 items-center">
+            <Star className="text-accent w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" />
+            <Star className="text-accent w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" />
+            <Star className="text-accent w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" />
+            <Star className="text-accent w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" />
+            <Star className="text-accent w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" />
           </div>
-          <span className="text-2xl font-bold text-accent">{MOVIE_INFO.rating}</span>
+          <span className="text-xl sm:text-2xl font-bold text-accent">{MOVIE_INFO.rating}</span>
         </motion.div>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row justify-center gap-4"
+          className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mx-auto w-full max-w-md sm:max-w-none"
         >
           <Button 
             size="lg" 
-            className="bg-secondary hover:bg-secondary/80 text-foreground px-8 py-7 rounded-md"
+            className="bg-secondary hover:bg-secondary/80 text-foreground px-6 sm:px-8 py-6 sm:py-7 rounded-md w-full sm:w-auto text-sm sm:text-base"
             onClick={() => scrollToSection("#about")}
           >
             Learn More
@@ -124,7 +124,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="bg-background/30 hover:bg-background/50 text-foreground border border-secondary/50 px-8 py-7 backdrop-blur-sm"
+            className="bg-background/30 hover:bg-background/50 text-foreground border border-secondary/50 px-6 sm:px-8 py-6 sm:py-7 backdrop-blur-sm w-full sm:w-auto text-sm sm:text-base"
             onClick={() => scrollToSection("#videos")}
           >
             Watch Trailer
@@ -135,7 +135,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.8, delay: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="mt-12"
+          className="mt-8 sm:mt-12 flex justify-center"
         >
           <a 
             href="#about" 
@@ -144,8 +144,9 @@ const HeroSection = () => {
               e.preventDefault();
               scrollToSection("#about");
             }}
+            className="bg-background/10 hover:bg-background/20 rounded-full p-1 transition-colors duration-300 backdrop-blur-sm"
           >
-            <ChevronDown className="mx-auto text-accent/80 hover:text-accent w-8 h-8 transition-colors duration-300" />
+            <ChevronDown className="text-accent/80 hover:text-accent w-6 sm:w-8 h-6 sm:h-8" />
           </a>
         </motion.div>
       </div>
