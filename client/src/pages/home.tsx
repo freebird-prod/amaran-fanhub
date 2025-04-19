@@ -5,6 +5,8 @@ import CharactersSection from "@/components/home/characters-section";
 import GallerySection from "@/components/home/gallery-section";
 import VideosSection from "@/components/home/videos-section";
 import BehindScenesSection from "@/components/home/behind-scenes-section";
+import TimelineSection from "@/components/home/timeline-section";
+import FAQSection from "@/components/home/faq-section";
 import NewsSection from "@/components/home/news-section";
 import ContactSection from "@/components/home/contact-section";
 import Header from "@/components/layout/header";
@@ -38,9 +40,11 @@ const Home = () => {
         <HeroSection />
         <AboutSection />
         <CharactersSection />
+        <TimelineSection />
         <GallerySection />
         <VideosSection />
         <BehindScenesSection />
+        <FAQSection />
         <NewsSection />
         <ContactSection />
       </main>
