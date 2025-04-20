@@ -1,39 +1,48 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { CAST, MOVIE_INFO } from "@/lib/constants";
+import { CAST } from "../../lib/constants";
 
-const CharacterCard = ({ character, index }: { character: typeof CAST[0]; index: number }) => {
+const CharacterCard = ({
+  character,
+  index,
+}: {
+  character: (typeof CAST)[0];
+  index: number;
+}) => {
   return (
-    <motion.div 
-      className="character-card group perspective-1000 h-full"
-      initial={{ opacity: 0, y: 50 }}
+    <motion.div
+      className="group relative rounded-2xl overflow-hidden shadow-xl perspective select-none"
+      style={{ width: "clamp(180px, 45vw, 280px)", height: "auto" }} // Increased max-width for larger screens.
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
     >
-      <div className="relative h-full transform-style-3d transition-transform duration-800 group-hover:[transform:rotateY(180deg)] sm:group-hover:[transform:rotateY(180deg)]">
-        {/* Card Front */}
-        <div className="card-front absolute inset-0 backface-hidden bg-muted rounded-lg shadow-xl overflow-hidden">
-          <img 
-            src={character.imageUrl} 
-            alt={character.name} 
-            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover"
-            loading="lazy"
-          />
-          <div className="p-4 md:p-6">
-            <h3 className="text-xl sm:text-2xl font-bold mb-1 md:mb-2 text-accent line-clamp-1">{character.name}</h3>
-            <p className="text-xs sm:text-sm text-secondary mb-1 md:mb-2 line-clamp-1">{character.role}</p>
-          </div>
-        </div>
+      {/* Image */}
+      <img
+        src={character.imageUrl}
+        alt={character.name}
+        className="w-full h-full object-cover rounded-2xl transition-all duration-300 ease-in-out group-hover:brightness-90" // Slightly darker hover.
+        style={{ aspectRatio: "3 / 4" }} // Maintain aspect ratio
+      />
 
-        {/* Card Back */}
-        <div className="card-back absolute inset-0 [transform:rotateY(180deg)] backface-hidden bg-muted rounded-lg shadow-xl overflow-hidden h-full p-4 sm:p-6 flex flex-col justify-center">
-          <h3 className="text-xl sm:text-2xl font-bold mb-2 md:mb-4 text-accent">{character.name}</h3>
-          <p className="mb-2 md:mb-4 text-base sm:text-lg">Role: {character.role}</p>
-          <div className="mt-auto">
-            <p className="text-xs text-secondary">Tap to see image</p>
-          </div>
-        </div>
+      {/* Slightly stronger bottom blur */}
+      <div className="absolute bottom-0 rounded-2xl inset-x-0 h-[40%] bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+
+      {/* Backdrop Blur and Text Section */}
+      <div className="absolute rounded-2xl bottom-0 inset-x-0 h-[40%] backdrop-blur-md bg-black/20 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+        {/* Text Content */}
+        <motion.div
+          className="text-white text-center p-4" // Center text and add padding.
+          style={{ borderRadius: "0.5rem" }}
+        >
+          <h3 className="text-xl sm:text-2xl font-bold text-yellow-400">
+            {character.name}
+          </h3>
+          <h3 className="text-lg sm:text-xl font-bold">as</h3>
+          <p className="font-semibold mt-1 text-sm sm:text-base">
+            {character.role}
+          </p>
+        </motion.div>
       </div>
     </motion.div>
   );
@@ -41,52 +50,53 @@ const CharacterCard = ({ character, index }: { character: typeof CAST[0]; index:
 
 const CharactersSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+
+  // State to handle showing more characters
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleCast = showAll ? CAST : CAST.slice(0, 4); 
 
   return (
-    <section 
-      id="characters" 
-      ref={sectionRef} 
-      className="py-20 bg-gradient-to-b from-primary to-background relative"
+    <section
+      id="characters"
+      ref={sectionRef}
+      className="relative py-16 bg-background overflow-hidden rounded-lg select-none"
     >
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-20 bg-[url('https://images.unsplash.com/photo-1598313183973-4effcded8d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover opacity-10"></div>
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-[url('https://images.unsplash.com/photo-1598313183973-4effcded8d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover opacity-10 transform rotate-180"></div>
-      
-      <div className="container mx-auto px-4">
-        <motion.div
-          className="max-w-3xl mx-auto text-center mb-10 sm:mb-16"
+      {/* Background blur - reduced opacity a bit */}
+      <div className="absolute inset-0 backdrop-blur-sm bg-cover bg-center opacity-15 rounded-lg" />
+
+      <div className="relative z-10 container mx-auto px-4 max-w-screen-xl">
+        <motion.h2
+          className="text-3xl sm:text-4xl font-bold text-center text-accent mb-8" // Adjusted mobile text size and margin
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-accent">
-            The Cast of Ämaran
-          </h2>
-          <p className="text-base sm:text-lg text-foreground/80 px-4">
-            Meet the extraordinary characters who bring this epic space adventure to life. 
-            <span className="hidden sm:inline"> Hover over</span><span className="inline sm:hidden"> Tap</span> the cards to discover more about each character's journey.
-          </p>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-          {CAST.map((character, index) => (
+          Meet the Cast
+        </motion.h2>
+
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+          {" "}
+          {/* Responsive gap */}
+          {visibleCast.map((character, index) => (
             <CharacterCard key={index} character={character} index={index} />
           ))}
         </div>
-        
+
+        {/* "View More Cast" Button */}
         <motion.div
-          className="mt-10 sm:mt-16 text-center"
+          className="mt-8 flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.5, delay: CAST.length * 0.1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
         >
-          <p className="text-secondary/80 text-sm sm:text-base md:text-lg">
-            <span className="text-accent font-semibold">Director:</span> {MOVIE_INFO.director} 
-            <span className="mx-2 hidden xs:inline">|</span>
-            <br className="inline xs:hidden" /> 
-            <span className="text-accent font-semibold">Writer:</span> {MOVIE_INFO.writer}
-          </p>
+          <button
+            onClick={() => setShowAll((prev) => !prev)}
+            className="text-lg text-black bg-yellow-500 py-2 px-6 rounded-lg font-semibold"
+          >
+            {showAll ? "View Less Cast" : "View More Cast"}
+          </button>
         </motion.div>
       </div>
     </section>

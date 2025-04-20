@@ -15,7 +15,7 @@ const VideosSection = () => {
   const otherVideos = VIDEOS.filter(video => !video.featured);
 
   return (
-    <section id="videos" ref={sectionRef} className="py-20 bg-background">
+    <section id="videos" ref={sectionRef} className="py-20 bg-background select-none">
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-4xl font-bold text-center mb-12 text-accent"
@@ -23,7 +23,7 @@ const VideosSection = () => {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.5 }}
         >
-          Videos
+          Movie Videos
         </motion.h2>
         
         {featuredVideo && (
@@ -40,19 +40,19 @@ const VideosSection = () => {
                 className="w-full h-full object-cover opacity-60"
               />
               <button 
-                className="absolute inset-0 flex items-center justify-center hover:bg-dark/30 transition-colors duration-300"
+                className="absolute inset-0 flex items-center justify-center transition-colors duration-300"
                 onClick={() => setActiveVideo(featuredVideo)}
                 aria-label="Play video"
               >
-                <div className="bg-secondary/80 hover:bg-secondary transition-colors duration-300 w-20 h-20 rounded-full flex items-center justify-center">
-                  <Play className="h-8 w-8 text-foreground" />
+                <div className="bg-accent transition-colors duration-300 w-12 h-12 rounded-full flex items-center justify-center">
+                  <Play className="h-6 w-6 text-foreground" />
                 </div>
               </button>
               <div className="absolute bottom-4 left-4 bg-background/80 px-4 py-2 rounded">
                 <h3 className="text-xl font-bold text-accent">{featuredVideo.title}</h3>
               </div>
             </div>
-            <p className="text-center mt-4 text-foreground/80">{featuredVideo.description}</p>
+            <p className="text-center mt-4 text-accent">{featuredVideo.description}</p>
           </motion.div>
         )}
         
@@ -65,7 +65,7 @@ const VideosSection = () => {
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
               transition={{ duration: 0.6, delay: 0.3 + (index * 0.1) }}
             >
-              <div className="relative aspect-video bg-muted rounded-lg overflow-hidden">
+              <div className="relative aspect-video rounded-lg overflow-hidden">
                 <img 
                   src={video.thumbnailUrl} 
                   alt={`${video.title} thumbnail`} 
@@ -76,13 +76,13 @@ const VideosSection = () => {
                   onClick={() => setActiveVideo(video)}
                   aria-label="Play video"
                 >
-                  <div className="bg-secondary/80 w-12 h-12 rounded-full flex items-center justify-center">
+                  <div className="bg-accent w-12 h-12 rounded-full flex items-center justify-center">
                     <Play className="h-5 w-5 text-foreground" />
                   </div>
                 </button>
               </div>
-              <h3 className="text-lg font-bold mt-3 text-foreground">{video.title}</h3>
-              <p className="text-foreground/70 text-sm">{video.duration}</p>
+              <h3 className="text-lg font-bold mt-3 text-accent">{video.title}</h3>
+              <p className="text-gray-400 text-sm">{video.duration}</p>
             </motion.div>
           ))}
         </div>

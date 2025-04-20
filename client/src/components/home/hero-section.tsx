@@ -22,7 +22,7 @@ const HeroSection = () => {
     <section 
       className="h-screen flex items-center bg-cover bg-center relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(15, 23, 70, 0.7), rgba(10, 15, 35, 0.95)), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')`
+        backgroundImage: `linear-gradient(to bottom, rgba(15, 23, 70, 0.3), rgba(10, 15, 35, 0.97)), url('https://assets-in.bmscdn.com/discovery-catalog/events/et00388085-reywyxjhxn-landscape.jpg')`
       }}
     >
       {/* Animated stars */}
@@ -60,9 +60,9 @@ const HeroSection = () => {
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <Star className="text-secondary w-4 sm:w-6 h-4 sm:h-6" fill="currentColor" />
-          <p className="uppercase tracking-widest text-xs sm:text-sm font-light text-secondary">In Theaters December 15, 2023</p>
-          <Star className="text-secondary w-4 sm:w-6 h-4 sm:h-6" fill="currentColor" />
+          <Star className="text-accent w-4 sm:w-6 h-4 sm:h-6" fill="currentColor" />
+          <p className="uppercase tracking-widest text-xs sm:text-sm font-semibold text-white">In Theaters October 31, 2024</p>
+          <Star className="text-accent w-4 sm:w-6 h-4 sm:h-6" fill="currentColor" />
         </motion.div>
         
         <motion.h1
@@ -89,7 +89,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-base sm:text-lg max-w-xl mx-auto mb-6 sm:mb-8 text-foreground/70"
         >
-          Experience the adventure that critics are calling "the cinematic event of the year."
+         "Don't miss the adventure critics are hailing as 'the cinematic event of the year!'"
         </motion.p>
         
         <motion.div
@@ -116,7 +116,7 @@ const HeroSection = () => {
         >
           <Button 
             size="lg" 
-            className="bg-secondary hover:bg-secondary/80 text-foreground px-6 sm:px-8 py-6 sm:py-7 rounded-md w-full sm:w-auto text-sm sm:text-base"
+            className="bg-background/30 text-foreground font-semibold border border-secondary/50 px-6 sm:px-8 py-6 sm:py-7 backdrop-blur-sm w-full sm:w-auto text-sm sm:text-base"
             onClick={() => scrollToSection("#about")}
           >
             Learn More
@@ -124,7 +124,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="bg-background/30 hover:bg-background/50 text-foreground border border-secondary/50 px-6 sm:px-8 py-6 sm:py-7 backdrop-blur-sm w-full sm:w-auto text-sm sm:text-base"
+            className="bg-background/30 text-foreground font-semibold border border-secondary/50 px-6 sm:px-8 py-6 sm:py-7 backdrop-blur-sm w-full sm:w-auto text-sm sm:text-base"
             onClick={() => scrollToSection("#videos")}
           >
             Watch Trailer
