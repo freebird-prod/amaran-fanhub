@@ -217,7 +217,7 @@ export const VIDEOS = [
     title: "Official Trailer",
     description: "Watch the official trailer for *Amaran*, coming to theaters October 31, 2024.",
     thumbnailUrl: "https://i.ytimg.com/vi/H7FT-d4YA74/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCA5bfQn2sWz7PJMQ58VS4h1gib3A",
-    videoUrl: "https://www.youtube.com/watch?v=hylIXfZeB4c&t=2s",
+    videoUrl: "/trailer.mp4",
     duration: "2:20",
     featured: true
   },
