@@ -217,7 +217,7 @@ export const VIDEOS = [
     title: "Official Trailer",
     description: "Watch the official trailer for *Amaran*, coming to theaters October 31, 2024.",
     thumbnailUrl: "https://i.ytimg.com/vi/H7FT-d4YA74/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCA5bfQn2sWz7PJMQ58VS4h1gib3A",
-    videoUrl: "https://youtu.be/H7FT-d4YA74?si=-AWDq9vU8J1yFKkf",
+    videoUrl: "/trailer.mp4",
     duration: "2:20",
     featured: true
   },
@@ -333,7 +333,7 @@ export const BEHIND_THE_SCENES = {
       title: "Property Design",
       description:
         "Props, including military equipment and personal artifacts, were carefully selected and designed to reflect the era and enhance storytelling.",
-      imageUrl: "https://www.cssd.ac.uk/sites/default/files/styles/open_graph_image/public/2020-12/1_Prop-Making-Workshop_Clay-Mask-Sculpting_Chris-White_IMG_0944_prop_design_maker_prop_making_courses_CSSD.jpg?h=be8b091f&itok=0JWkKqkB",
+      imageUrl: "https://macksennettstudios.net/wp-content/uploads/2021/09/Movie-props-can-include-prosthetics-scenery-or-additional-objects-found-on-set-1024x683.jpg",
       imageAlt: "Prop collection for Amaran",
     },
     {
