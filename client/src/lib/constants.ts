@@ -15,12 +15,12 @@ export const CAST = [
   {
     name: "Sivakarthikeyan",
     role: 'Major Mukund Varadarajan',
-    imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTRUeLY-0Q-DghmYtx2B8F1zHWBUDcaEFwGS_M86mT2DlczQimsXaKbxkZI6J6d5GIAp64_ZVWMEK6zAhTrpP1oRA", // replace with actual image URL
+    imageUrl: "/sivakarthikeyan.jpeg", // replace with actual image URL
   },
   {
     name: "Sai Pallavi",
     role: "Indhu Rebecca Varghese",
-    imageUrl: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202410/sai-pallavi-270104449-16x9.jpeg?VersionId=d98Cp_2h62BODz9GptUwowi0GARPXQ4Z&size=690:388", // replace with actual image URL
+    imageUrl: "/sai-pallavi.png", // replace with actual image URL
   },
   {
     name: "Rahul Bose",
@@ -138,39 +138,39 @@ export const CAST = [
 export const GALLERY_IMAGES = [
   {
     id: 1,
-    url: "https://www.sakshi.com/gallery_images/2024/10/22/Amaran%20Movie%20HD%20Images_%20%2825%29.jpg",
+    url: "/main-scene.jpg",
     alt: "Amaran Main Scene",
     caption: "The vastness of space as depicted in Amaran"
   },
   {
     id: 2,
-    url: "https://images.filmibeat.com/img/2024/11/amaran1-1731315136.jpg",
+    url: "/second-scene.jpg",
     alt: "Character in futuristic environment",
     caption: "Eira navigating an alien structure"
   },
   {
     id: 3,
-    url: "https://www.sakshi.com/gallery_images/2024/10/22/Amaran%20Movie%20HD%20Images_%20%283%29.jpg",
+    url: "/first-look.jpg",
     alt: "Spaceship approaching planet",
     caption: "The Horizon approaching Ämaran"
   },
   {
     id: 4,
-    url: "https://www.sakshi.com/gallery_images/2024/10/22/Amaran%20Movie%20HD%20Images_%20%282%29.jpg",
+    url: "/third-scene.jpg",
     alt: "Ancient artifact from the movie",
     caption: "The mysterious artifact that leads to Ämaran"
   },
   {
     id: 5,
-    url: "https://th-i.thgim.com/public/entertainment/movies/uzkpol/article68817753.ece/alternates/FREE_1200/NDP07405.jpg",
+    url: "/fourth-scene.jpg",
     alt: "Characters in action scene",
     caption: "Eira and Kade face danger together"
   },
   {
     id: 6,
-    url: "https://th-i.thgim.com/public/entertainment/movies/n76pg7/article68817722.ece/alternates/LANDSCAPE_1200/AMARAN%20review.jpg",
-    alt: "Alien landscape from Ämaran",
-    caption: "The breathtaking landscapes of Ämaran"
+    url: "/fifth-scene.jpg",
+    alt: "Alien landscape from Amaran",
+    caption: "The breathtaking landscape of Amaran"
   },
   {
     id: 7,

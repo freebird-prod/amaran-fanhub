@@ -175,79 +175,7 @@ const FAQSection = () => {
             ))}
           </Accordion>
         </motion.div>
-
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.5, delay: 0.5 + (FAQ_ITEMS.length * 0.1) }}
-        >
-          <p className="text-foreground/80">
-            Have a question not answered here?{" "}
-            <button
-              onClick={() => setShowChat(true)}
-              className="ml-2 text-accent hover:text-accent/80 transition-colors"
-            >
-              Ask Amara AI
-            </button>
-          </p>
-        </motion.div>
       </div>
-
-      {/* Chatbot Modal */}
-      <AnimatePresence>
-        {showChat && (
-          <motion.div
-            className="fixed inset-0 bg-black/50 flex justify-center items-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div className="backdrop-blur-lg w-full max-w-lg p-6 border border-accent rounded-lg shadow-lg">
-              <div className="flex justify-between items-center">
-                <h3 className="text-2xl font-semibold text-accent text-center">Ask Amara AI</h3>
-                <button
-                  onClick={() => setShowChat(false)}
-                  className="text-xl text-foreground/70 hover:text-accent"
-                >
-                  <X />
-                </button>
-              </div>
-              <div className="mt-4">
-                <div className="h-64 overflow-y-auto space-y-4 border-b border-accent/30">
-                  {messages.map((msg, index) => (
-                    <div key={index} className="flex gap-3 items-center">
-                      <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center`}>
-                        {msg.role === "assistant" ? "A" : "U"}
-                      </div>
-                      <div className={`text-sm ${msg.role === "assistant" ? "text-foreground" : "text-accent"}`}>
-                        {msg.text}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-4 border-t border-accent/30 pt-4">
-                  <input
-                    type="text"
-                    value={input}
-                    required
-                    onChange={(e) => setInput(e.target.value)}
-                    className="w-full p-3 border bg-transparent border-accent rounded-lg"
-                    placeholder="Type your question..."
-                  />
-                  <button
-                    onClick={handleSend}
-                    disabled={loading}
-                    className="w-full mt-3 p-3 bg-accent text-lg text-black font-semibold rounded-lg disabled:opacity-50"
-                  >
-                    {loading ? "Thinking..." : "Send"}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };
